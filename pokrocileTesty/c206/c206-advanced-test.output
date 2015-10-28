@@ -10,13 +10,13 @@ Inicializace seznamu
 [TEST02]
 Pokus o volání DLCopyFirst na prázdný seznam => chyba
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-*ERROR* This program has performed an illegal operation.
+*ERROR* The program has performed an illegal operation.
 Operace DLCopyFirst volala funkci DLError.
 
 [TEST03]
 Pokus o volání DLCopyLast na prázdný seznam => chyba
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-*ERROR* This program has performed an illegal operation.
+*ERROR* The program has performed an illegal operation.
 Operace DLCopyLast volala funkci DLError.
 
 [TEST04]
@@ -150,7 +150,7 @@ Operace DLActive vrací hodnotu false.
 [TEST14]
 Pokus o DLCopy pøi neaktivním seznamu => o¹etøená chyba.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-*ERROR* This program has performed an illegal operation.
+*ERROR* The program has performed an illegal operation.
 Operace DLCopy volala funkci DLError.
 
 [TEST15]
@@ -464,9 +464,9 @@ Operace DLActive vrací hodnotu false.
 [TEST43]
 DLCopyFirst i DLCopyLast zpùsobí o¹etøenou chybu.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-*ERROR* This program has performed an illegal operation.
+*ERROR* The program has performed an illegal operation.
 Operace DLCopyFirst volala funkci DLError.
-*ERROR* This program has performed an illegal operation.
+*ERROR* The program has performed an illegal operation.
 Operace DLCopyLast volala funkci DLError.
 
 [TEST44]
@@ -496,7 +496,7 @@ DLPostInsert i DLPreInsert pøi prázdném seznamu nic nedìlají.
 [TEST47]
 Pokus o DLCopy na prázdný seznam => chyba
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-*ERROR* This program has performed an illegal operation.
+*ERROR* The program has performed an illegal operation.
 Operace DLCopy volala funkci DLError.
 
 [TEST48]

@@ -75,14 +75,15 @@ void queueInit (tQueue* q) {
 ** V pøípadì, ¾e funkce dostane jako parametr q == NULL, volejte funkci
 ** queueError(QERR_INIT).
 */
-	if ( q == NULL) { // vola sa funkcia queerror
+	if ( q == NULL) { 
 		queueError(QERR_INIT);
 		return;
 	}
 	else {
-		for (int i = 0; i < QUEUE_SIZE; i++){
+		for (int i = 0; i < QUEUE_SIZE; i++) {
 			q->arr[i] = '*';
 		}
+
 		q->f_index = 0; // zaciatok nastavim na 0
 		q->b_index = 0; // prvy prazdny prvok tiez nastavim na 0
 	}
@@ -126,12 +127,13 @@ void queueFront (const tQueue* q, char* c) {
 **
 ** Pøi implementaci vyu¾ijte døíve definované funkce queueEmpty.
 */
-	if ( queueEmpty(q)) {// ak je fronta prazdna tak vola ERROR
+	if ( queueEmpty(q)) {
 		queueError(QERR_FRONT);
 		return;
 	}
-	else 
+	else {
 		*c = q-> arr[q->f_index]; // inak vracia index prveho prvku
+	}
 }
 
 void queueRemove (tQueue* q) {
@@ -141,12 +143,13 @@ void queueRemove (tQueue* q) {
 ** Hodnotu na uvolnìné pozici ve frontì nijak neo¹etøujte (nepøepisujte).
 ** Pøi implementaci vyu¾ijte døíve definované funkce queueEmpty a nextIndex.
 */
-	if (queueEmpty(q) == 1) { // ak je fronta prazdna tak volam ERROR
+	if (queueEmpty(q) == 1) {
 		queueError(QERR_REMOVE);
 		return;
 	}
-	else
+	else {
 		q ->f_index = nextIndex(q->f_index); // do prvej polozky fronty dam nasledujucu polozku pomocou funkce nextindex
+	}
 }
 
 void queueGet (tQueue* q, char* c) {
@@ -157,11 +160,11 @@ void queueGet (tQueue* q, char* c) {
 ** Pøi implementaci vyu¾ijte døíve definovaných funkcí queueEmpty,
 ** queueFront a queueRemove.
 */
-	if (queueEmpty(q) == 1){ // ak je fronta prazdna tak volam ERROR
+	if (queueEmpty(q) == 1) { 
 		queueError(QERR_GET);
 		return;
 	}
-	else{
+	else {
 		queueFront(q, c); // vracia v parametri c znak prveho prvku fronty
 		queueRemove(q); // odstrani znak zo zaciatku fronty
 	}
@@ -177,11 +180,11 @@ void queueUp (tQueue* q, char c) {
 **
 ** Pøi implementaci vyu¾ijte døíve definovaných funkcí queueFull a nextIndex.
 */
-	if (queueFull(q) == 1) { // ak je fronta plna tak volame ERROR
+	if (queueFull(q) == 1) {
 		queueError(QERR_UP);
 		return;
 	}
-	else{
+	else {
 		q->arr[q-> b_index] = c; // vlozime znak na prve prazdne miesto
 		q->b_index = nextIndex(q->b_index);// do indexu prveho prazdneho dame index nasledujuceho pomocou nextindex
 	}

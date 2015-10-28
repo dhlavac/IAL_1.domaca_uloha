@@ -10,7 +10,7 @@ Inicializace seznamu
 [TEST02]
 Pokus o volání CopyFirst nad prázdným seznamem => chyba
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-*ERROR* This program has performed an illegal operation.
+*ERROR* The program has performed an illegal operation.
 Operace CopyFirst volala funkci Error.
 
 [TEST03]
@@ -116,7 +116,7 @@ Operace Active vrací 0.
 [TEST11]
 Pokus o Copy pøi neaktivním seznamu => o¹etøená chyba
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-*ERROR* This program has performed an illegal operation.
+*ERROR* The program has performed an illegal operation.
 Operace Copy volala funkci Error.
 
 [TEST12]
@@ -307,9 +307,9 @@ First ani PostInsert nad prázdným seznamem nic nedìlá.
 [TEST29]
 Copy a CopyFirst nad prázdným seznamem => o¹etøená chyba
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-*ERROR* This program has performed an illegal operation.
+*ERROR* The program has performed an illegal operation.
 Operace Copy volala funkci Error.
-*ERROR* This program has performed an illegal operation.
+*ERROR* The program has performed an illegal operation.
 Operace CopyFirst volala funkci Error.
 
 [TEST30]
