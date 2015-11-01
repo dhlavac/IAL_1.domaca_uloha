@@ -225,12 +225,6 @@ void DLDeleteFirst (tDLList *L) {
 	 	L->Act = NULL;
 	}
 
-	if (L->First == L->Last) { 
-		L->First = NULL;
-		L->Last = NULL;
-		L->Act = NULL;
-	}
-
 	if (L->First != NULL) { // ak prvy prvok seznamu 
 	 	tpom = L->First;
 	 	L->First = L->First->rptr; // ziskam cestu k nasledujucemu
@@ -244,7 +238,7 @@ void DLDeleteLast (tDLList *L) {
 ** Zru¹í poslední prvek seznamu L. Pokud byl poslední prvek aktivní,
 ** aktivita seznamu se ztrácí. Pokud byl seznam L prázdný, nic se nedìje.
 **/ 
-	tDLElemPtr tpom ;
+	tDLElemPtr tpom = L->Last;
 
 	if (L->First == NULL) {
 		return;
@@ -254,18 +248,15 @@ void DLDeleteLast (tDLList *L) {
 		L->Act = NULL;
 	}
 
-	if (L->First == L->Last) {
-		L->First = NULL;
-		L->Last = NULL;
-		L->Act = NULL;
-	}
+	L->Last = L->Last->lptr; // ziskam cestu k predchadzajucemu
+	free(tpom);
 
-	if (L->First != NULL) { // ak prvy prvok seznamu 
-	 	tpom = L->Last; 
-	 	L->Last = L->Last->lptr; // ziskam cestu k nasledujucemu
-	 	L->Last->rptr = NULL; //novy prvy prvok zoznamu ukazuje vlavo na NULL
- 		free(tpom);
- 	}
+	if (L->Last == NULL) {
+		L->First = NULL;
+	}
+	else {
+		L->Last->rptr = NULL;
+	}
 }
 
 void DLPostDelete (tDLList *L) {
@@ -284,6 +275,7 @@ void DLPostDelete (tDLList *L) {
 
 		if(L->Last == tpom) { //ak je ruseny prvok posledny
 			L->Last = L->Act;
+			L->Act->rptr = NULL;
 		}
 		else {
 			tpom->rptr->lptr = L->Act; //preskocime ruseny prvok
@@ -308,6 +300,7 @@ void DLPreDelete (tDLList *L) {
 
 		if(L->First == tpom) { //ak je ruseny prvok posledny
 			L->First = L->Act;
+			L->Act->lptr = NULL;
 		}
 		else {
 			tpom->lptr->rptr = L->Act; //preskocime ruseny prvok
